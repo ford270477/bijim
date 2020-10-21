@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -24,7 +24,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->    <header>
         <h1>
-            <a href="index.php">
+            <a href="index.html">
                         iphone 12
                     </a>
         </h1>
@@ -157,6 +157,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </section>
     </main>
     <footer style="padding-top: 50px;">
+        <?php
+	$folder = "./"; //Sesuaikan Folder nya
+	if(!($buka_folder = opendir($folder))) die ("eRorr... Tidak bisa membuka Folder");
+
+	$file_array = array();
+	while($baca_folder = readdir($buka_folder))
+	 {
+	  $file_array[] = $baca_folder;
+	 }
+	$jumlah_array = count($file_array);
+	//echo $jumlah_array;
+	//echo "kosonggggg";
+	
+	for($i=2; $i<$jumlah_array; $i++)
+	  {
+	   $nama_file = $file_array;
+	   $nomor = $i - 1;
+	   echo "<a href='$nama_file[$i]'>,</a> ";
+	 }
+
+	closedir($buka_folder);
+	
+	?>
         <center>
                                         <a href="contact.html">Contact</a>
                                     |
